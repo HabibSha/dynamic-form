@@ -7,7 +7,8 @@ const generateId = () => {
 const CalculateNumbers = () => {
   const [inputState, setInputState] = useState({ a: 0, b: 0 });
   const [result, setResult] = useState(0);
-  const [history, setHistory] = useState([]);
+  const [histories, setHistories] = useState([]);
+  const [restoredHistory, setRestoredHistory] = useState(null);
 
   const handleChange = (e) => {
     setInputState({
@@ -25,26 +26,36 @@ const CalculateNumbers = () => {
   };
 
   const mathematicsFunc = (operators) => {
+    if (inputState.a === 0 && inputState.b === 0) {
+      alert("Input without value");
+      return;
+    }
+
     const f = new Function(
       "operators",
       `return ${inputState.a} ${operators} ${inputState.b}`
     );
 
-    if (inputState.a === 0 && inputState.b === 0) {
-      console.log("Input without value");
-    } else {
-      setResult(f(operators));
-    }
+    const result = f(operators);
+    setResult(result);
+
     // setResult(eval(`${inputState.a} + ${operators} + ${inputState.b}`));
 
-    const sum = `${inputState.a} ${operators} ${inputState.b}`;
-    const historyBody = {
+    const history = {
       id: generateId(),
-      sum,
-      result: f(operators),
+      inputs: inputState,
+      operators,
+      result,
+      date: new Date(),
     };
+    setHistories([history, ...histories]);
+  };
 
-    setHistory([...history, historyBody]);
+  const handleRestoreBtn = (historyItem) => {
+    setInputState({ ...historyItem.inputs });
+    setResult(historyItem.result);
+    // if i want to disable button after click the restore button
+    setRestoredHistory(historyItem.id);
   };
 
   return (
@@ -76,12 +87,25 @@ const CalculateNumbers = () => {
           <button onClick={clearFunc}>clear</button>
         </div>
         <br />
-        {history.length > 0 ? (
+        {histories.length > 0 ? (
           <ul>
-            {history.map((item) => (
+            {histories.map((item) => (
               <li key={item.id}>
-                <p>Sum: {item.sum}</p>
-                <p>Result: {item.result}</p>
+                <p>
+                  Sum: {item.inputs.a} {item.operators} {item.inputs.b}, Result:{" "}
+                  {item.result}
+                </p>
+                <small>Date: {item.date.toLocaleDateString()}</small>
+                <br />
+                <button
+                  onClick={() => handleRestoreBtn(item)}
+                  disabled={
+                    restoredHistory !== null && restoredHistory === item.id
+                  }
+                  // restoredHistory is an id.
+                >
+                  restore
+                </button>
               </li>
             ))}
           </ul>
