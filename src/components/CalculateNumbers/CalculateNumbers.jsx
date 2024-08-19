@@ -87,6 +87,8 @@ const CalculateNumbers = () => {
           <button onClick={clearFunc}>clear</button>
         </div>
         <br />
+        <h4>History:</h4>
+
         {histories.length > 0 ? (
           <ul>
             {histories.map((item) => (
