@@ -53,7 +53,6 @@ const ProductLists = () => {
   };
 
   const total = products.reduce((acc, cur) => acc + cur.total, 0);
-  let tax;
 
   return (
     <>

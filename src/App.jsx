@@ -1,4 +1,5 @@
 import CalculateNumbers from "./components/CalculateNumbers/CalculateNumbers";
+import ContactList from "./components/ContactList/ContactList";
 import DynamicForm from "./components/DynamicForm";
 import ProductLists from "./components/DynamicProductLists/ProductLists";
 
@@ -8,9 +9,11 @@ function App() {
       <DynamicForm />
       <br />
       <br />
-      <ProductLists />
+      {/* <ProductLists /> */}
       <br />
-      <CalculateNumbers />
+      {/* <CalculateNumbers /> */}
+      <br />
+      <ContactList />
     </>
   );
 }
