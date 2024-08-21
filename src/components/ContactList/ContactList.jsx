@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 const ContactList = () => {
+  const [contacts, setContacts] = useState(null);
+
   return (
     <>
       <h1>Contact List</h1>
@@ -21,10 +23,11 @@ const initialState = {
 };
 
 const CreateContact = () => {
-  const [inputText, setInputText] = useState(initialState);
+  const [inputText, setInputText] = useState({ ...initialState });
 
   const handleChange = (e) => {
     setInputText({
+      ...inputText,
       [e.target.name]: e.target.value,
     });
     console.log(inputText);
