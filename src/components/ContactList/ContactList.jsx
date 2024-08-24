@@ -69,6 +69,12 @@ const CreateContact = () => {
   );
 };
 
-// const DisplayContact = () => {
-
-// }
+const DisplayContact = () => {
+  return (
+    <>
+      {contacts.map((contact) => (
+        <div></div>
+      ))}
+    </>
+  );
+};
