@@ -69,7 +69,7 @@ const CreateContact = () => {
   );
 };
 
-const DisplayContact = () => {
+const DisplayContact = ({ contacts }) => {
   return (
     <>
       {contacts.map((contact) => (
