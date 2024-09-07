@@ -20,13 +20,7 @@ function App() {
       {/* <br /> */}
       <MaterialUI />
       <div>
-
-
-
-
       <Button variant="contained">Contained</Button>
-  
-
       </div>
     </>
   );
