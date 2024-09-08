@@ -1,4 +1,4 @@
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 
 // import CalculateNumbers from "./components/CalculateNumbers/CalculateNumbers";
 // import ContactList from "./components/ContactList/ContactList";
@@ -20,7 +20,10 @@ function App() {
       {/* <br /> */}
       <MaterialUI />
       <div>
-      <Button variant="contained">Contained</Button>
+        <TextField id="standard-basic" label="Standard" variant="standard" />
+      </div>
+      <div>
+        <Button variant="contained">Contained</Button>
       </div>
     </>
   );
