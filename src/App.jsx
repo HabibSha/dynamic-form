@@ -25,9 +25,6 @@ function App() {
       </div>
       <div>
         <Button variant="contained">Contained</Button>
-        <Button variant="danger">Danger</Button>
-        <Button variant="success">Success</Button>
-        <Button variant="outline">Outline</Button>
       </div>
     </>
   );
