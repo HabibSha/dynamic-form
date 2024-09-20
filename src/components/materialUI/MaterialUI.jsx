@@ -121,6 +121,10 @@ const MaterialUI = () => {
             Set aside off of the heat to let rest for 10 minutes, and then
             serve.
           </Typography>
+          <Typography>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse
+            maiores cupiditate animi recusandae
+          </Typography>
         </CardContent>
       </Collapse>
     </Card>
