@@ -123,7 +123,7 @@ const MaterialUI = () => {
           </Typography>
           <Typography>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse
-            maiores cupiditate animi recusandae
+            maiores cupiditate animi recusandae.
           </Typography>
         </CardContent>
       </Collapse>
