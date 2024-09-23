@@ -1,13 +1,15 @@
 // import Button from "@mui/material/Button";
 // import TextField from "@mui/material/TextField";
 
+import FetchApi from "./components/fetchApi/FetchApi";
+
 // import CalculateNumbers from "./components/CalculateNumbers/CalculateNumbers";
 // import ContactList from "./components/ContactList/ContactList";
 // import DynamicForm from "./components/DynamicForm";
-import ProductLists from "./components/DynamicProductLists/ProductLists";
+// import ProductLists from "./components/DynamicProductLists/ProductLists";
 // import MaterialUI from "./components/materialUI/MaterialUI";
 // import Clock from "./components/clock/Clock";
-import Counter from "./components/counter/Counter";
+// import Counter from "./components/counter/Counter";
 // import UseEffect from "./components/useEffect/UseEffect";
 
 function App() {
@@ -16,7 +18,7 @@ function App() {
       {/* <DynamicForm /> */}
       {/* <br /> */}
       {/* <br /> */}
-      <ProductLists />
+      {/* <ProductLists /> */}
       {/* <br /> */}
       {/* <CalculateNumbers /> */}
       {/* <br /> */}
@@ -29,9 +31,10 @@ function App() {
       <div>
         <Button variant="contained">Contained</Button>
       </div> */}
-      <Counter />
+      {/* <Counter /> */}
       {/* <UseEffect /> */}
       {/* <Clock /> */}
+      <FetchApi />
     </>
   );
 }
