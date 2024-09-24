@@ -1,43 +1,48 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
+
+import useFetchApi from "./useFetchApi";
 
 const FetchApi = () => {
-  const [users, setUsers] = useState([]);
-  const [userLoading, setUserLoading] = useState(false);
-  const [userError, setUserError] = useState("");
-  const [posts, setPosts] = useState([]);
-  const [postLoading, setPostLoading] = useState(false);
-  const [postError, setPostError] = useState("");
+  // const [users, setUsers] = useState([]);
+  // const [userLoading, setUserLoading] = useState(false);
+  // const [userError, setUserError] = useState("");
+  // const [posts, setPosts] = useState([]);
+  // const [postLoading, setPostLoading] = useState(false);
+  // const [postError, setPostError] = useState("");
 
-  useEffect(() => {
-    fetchUserData();
-    fetchPostData();
-  }, []);
+  // useEffect(() => {
+  //   fetchUserData();
+  //   fetchPostData();
+  // }, []);
 
-  const fetchUserData = async () => {
-    try {
-      setUserLoading(true);
-      const res = await fetch("https://jsonplaceholder.typicode.com/users");
-      const data = await res.json();
-      setUsers(data);
-      setUserLoading(false);
-    } catch (error) {
-      setUserLoading(false);
-      setUserError(error.message);
-    }
-  };
+  // const fetchUserData = async () => {
+  //   try {
+  //     setUserLoading(true);
+  //     const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  //     const data = await res.json();
+  //     setUsers(data);
+  //     setUserLoading(false);
+  //   } catch (error) {
+  //     setUserLoading(false);
+  //     setUserError(error.message);
+  //   }
+  // };
 
-  const fetchPostData = async () => {
-    try {
-      setPostLoading(true);
-      const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-      const data = await res.json();
-      setPosts(data);
-      setPostLoading(false);
-    } catch (error) {
-      setPostLoading(false);
-      setPostError(error.message);
-    }
-  };
+  // const fetchPostData = async () => {
+  //   try {
+  //     setPostLoading(true);
+  //     const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  //     const data = await res.json();
+  //     setPosts(data);
+  //     setPostLoading(false);
+  //   } catch (error) {
+  //     setPostLoading(false);
+  //     setPostError(error.message);
+  //   }
+  // };
+
+  const users = useFetchApi("https://jsonplaceholder.typicode.com/users");
+  const posts = useFetchApi("https://jsonplaceholder.typicode.com/posts");
 
   return (
     <>
@@ -51,11 +56,11 @@ const FetchApi = () => {
         <div>
           <h1>Users</h1>
           <hr />
-          {userLoading && <p>Loading...</p>}
-          {userError && <p>{userError}</p>}
-          {users &&
-            users.length > 0 &&
-            users.map((user) => {
+          {users.loading && <p>Loading...</p>}
+          {users.error && <p>{users.error}</p>}
+          {users.data &&
+            users.data.length > 0 &&
+            users.data?.map((user) => {
               return (
                 <div key={user.id}>
                   <h3>{user.name}</h3>
@@ -67,11 +72,11 @@ const FetchApi = () => {
         <div>
           <h1>Posts</h1>
           <hr />
-          {postLoading && <p>Loading...</p>}
-          {postError && <p>{postError}</p>}
-          {posts &&
-            posts.length > 0 &&
-            posts.map((post) => {
+          {posts.loading && <p>Loading...</p>}
+          {posts.error && <p>{posts.error}</p>}
+          {posts.data &&
+            posts.data.length > 0 &&
+            posts.data?.map((post) => {
               return (
                 <div key={post.id}>
                   <h3>{post.title}</h3>
