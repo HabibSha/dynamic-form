@@ -42,7 +42,13 @@ const FetchApi = () => {
   // };
 
   const users = useFetchApi("https://jsonplaceholder.typicode.com/users");
-  const posts = useFetchApi("https://jsonplaceholder.typicode.com/posts");
+
+  // TODO: If we don't need any unnecessary data from api, then we will create a call back function and we will pass as a argument that what kind of data we need from the api.
+  const posts = useFetchApi(
+    "https://jsonplaceholder.typicode.com/posts",
+    (data) =>
+      data.map((item) => ({ id: item.id, title: item.title })).slice(0, 10)
+  );
 
   return (
     <>

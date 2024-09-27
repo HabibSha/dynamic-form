@@ -16,7 +16,11 @@ const useFetchApi = (url, cb) => {
       setLoading(true);
       const res = await fetch(url);
       const result = await res.json();
-      setData(result);
+      if (cb) {
+        setData(cb(result));
+      } else {
+        setData(result);
+      }
       setLoading(false);
       setError("");
     } catch (error) {
