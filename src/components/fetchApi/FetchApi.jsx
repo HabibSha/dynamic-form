@@ -50,6 +50,12 @@ const FetchApi = () => {
       data.map((item) => ({ id: item.id, title: item.title })).slice(0, 10)
   );
 
+  const comments = useFetchApi(
+    "https://jsonplaceholder.typicode.com/comments",
+    (data) =>
+      data.map((item) => ({ id: item.id, name: item.name })).slice(0, 10)
+  );
+
   return (
     <>
       <article
@@ -86,6 +92,22 @@ const FetchApi = () => {
               return (
                 <div key={post.id}>
                   <h3>{post.title}</h3>
+                  {/* <p>{post.body}</p> */}
+                </div>
+              );
+            })}
+        </div>
+        <div>
+          <h1>Comments</h1>
+          <hr />
+          {comments.loading && <p>Loading...</p>}
+          {comments.error && <p>{comments.error}</p>}
+          {comments.data &&
+            comments.data.length > 0 &&
+            comments.data?.map((comment) => {
+              return (
+                <div key={comment.id}>
+                  <h3>{comment.name}</h3>
                   {/* <p>{post.body}</p> */}
                 </div>
               );
