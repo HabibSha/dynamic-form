@@ -1,0 +1,18 @@
+thead {
+  padding: 12px; /* Adds spacing inside the header cells */
+}
+
+tbody {
+  padding: 12px; /* Adds spacing inside the header cells */
+}
+
+th {
+  padding: 18px; /* Adds padding to the header cells */
+}
+td {
+  padding: 18px; /* Adds padding to the header cells */
+}
+
+article {
+  margin: 20px 0; /* Adds margin to the table */
+}

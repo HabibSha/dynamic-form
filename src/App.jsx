@@ -1,7 +1,9 @@
 // import Button from "@mui/material/Button";
 // import TextField from "@mui/material/TextField";
 
-import FetchApi from "./components/fetchApi/FetchApi";
+import Products from "./components/productsCalculate/Products";
+
+// import FetchApi from "./components/fetchApi/FetchApi";
 
 // import CalculateNumbers from "./components/CalculateNumbers/CalculateNumbers";
 // import ContactList from "./components/ContactList/ContactList";
@@ -34,7 +36,8 @@ function App() {
       {/* <Counter /> */}
       {/* <UseEffect /> */}
       {/* <Clock /> */}
-      <FetchApi />
+      {/* <FetchApi /> */}
+      <Products />
     </>
   );
 }
