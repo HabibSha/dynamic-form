@@ -1,6 +1,7 @@
 // import Button from "@mui/material/Button";
 // import TextField from "@mui/material/TextField";
 
+import Form from "./components/customForm/Form";
 import Products from "./components/productsCalculate/Products";
 
 // import FetchApi from "./components/fetchApi/FetchApi";
@@ -37,7 +38,8 @@ function App() {
       {/* <UseEffect /> */}
       {/* <Clock /> */}
       {/* <FetchApi /> */}
-      <Products />
+      {/* <Products /> */}
+      <Form />
     </>
   );
 }

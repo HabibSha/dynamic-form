@@ -86,6 +86,6 @@ const DynamicForm = () => {
 export default DynamicForm;
 
 // TODO: We can use this function in handleChange for deep cloning.
-const deepClone = (obj) => {
-  return JSON.parse(JSON.stringify(obj));
-};
+// const deepClone = (obj) => {
+//   return JSON.parse(JSON.stringify(obj));
+// };
