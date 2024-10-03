@@ -38,7 +38,7 @@ const Form = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        {/* {dynamicData?.map((item, index) => {
+        {dynamicData?.map((item, index) => {
           <div key={index}>
             <label>{item.label}</label>
             <input
@@ -49,7 +49,7 @@ const Form = () => {
               onChange={handleChange}
             />
           </div>;
-        })} */}
+        })}
         <input type="text" />
         <button type="submit">Submit</button>
       </form>
