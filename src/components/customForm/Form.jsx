@@ -52,7 +52,6 @@ const Form = () => {
             />
           </div>;
         })}
-        <input type="text" />
         <button type="submit">Submit</button>
       </form>
     </>
