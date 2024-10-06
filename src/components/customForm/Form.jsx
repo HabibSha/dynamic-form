@@ -28,7 +28,7 @@ const Form = () => {
 
   const handleChange = () => {
     const oldState = deepClone(formState);
-    console.log(oldState);
+    setFormState(oldState);
   };
 
   const handleSubmit = (e) => {
