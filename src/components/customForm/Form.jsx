@@ -60,9 +60,9 @@ const Form = () => {
 
 export default Form;
 
-const objToArray = (obj) => {
-  return Object.keys(obj).map((key) => ({ name: key, ...obj[key] }));
-};
+// const objToArray = (obj) => {
+//   return Object.keys(obj).map((key) => ({ name: key, ...obj[key] }));
+// };
 
 const transformObject = (obj) => {
   return Array.keys(obj).reduce((acc, cur) => {
