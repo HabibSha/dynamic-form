@@ -41,16 +41,18 @@ const Form = () => {
         {dynamicData?.map((item, index) => {
           console.log(item);
 
-          <div key={index}>
-            <label>{item.label}</label>
-            <input
-              type={item.type}
-              name={item.name}
-              value={item.value}
-              placeholder={item.placeholder}
-              onChange={handleChange}
-            />
-          </div>;
+          return (
+            <div key={index}>
+              <label>{item.label}</label>
+              <input
+                type={item.type}
+                name={item.name}
+                value={item.value}
+                placeholder={item.placeholder}
+                onChange={handleChange}
+              />
+            </div>
+          );
         })}
         <button type="submit">Submit</button>
       </form>
@@ -60,9 +62,9 @@ const Form = () => {
 
 export default Form;
 
-// const objToArray = (obj) => {
-//   return Object.keys(obj).map((key) => ({ name: key, ...obj[key] }));
-// };
+const objToArray = (obj) => {
+  return Object.keys(obj).map((key) => ({ name: key, ...obj[key] }));
+};
 
 const transformObject = (obj) => {
   return Array.keys(obj).reduce((acc, cur) => {
