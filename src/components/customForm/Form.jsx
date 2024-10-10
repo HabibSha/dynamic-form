@@ -30,7 +30,11 @@ const Form = () => {
     // const oldState = deepClone(formState);
     // setFormState(oldState);
     setFormState({
-      [e.target.name]: e.target.value,
+      ...formState,
+      [event.target.name]: {
+        ...formState[event.target.name],
+        value: event.target.value,
+      },
     });
   };
 
