@@ -26,7 +26,7 @@ const Form = () => {
 
   console.log(dynamicData);
 
-  const handleChange = (e) => {
+  const handleChange = (event) => {
     // const oldState = deepClone(formState);
     // setFormState(oldState);
     setFormState({
