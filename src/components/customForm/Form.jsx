@@ -73,13 +73,13 @@ const objToArray = (obj) => {
   return Object.keys(obj).map((key) => ({ name: key, ...obj[key] }));
 };
 
-const transformObject = (obj) => {
-  return Array.keys(obj).reduce((acc, cur) => {
-    acc[cur] = { ...obj[cur], value: "" };
-    return acc;
-  }, {});
-};
+// const transformObject = (obj) => {
+//   return Array.keys(obj).reduce((acc, cur) => {
+//     acc[cur] = { ...obj[cur], value: "" };
+//     return acc;
+//   }, {});
+// };
 
-const deepClone = (obj) => {
-  return JSON.parse(JSON.stringify(obj));
-};
+// const deepClone = (obj) => {
+//   return JSON.parse(JSON.stringify(obj));
+// };
