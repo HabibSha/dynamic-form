@@ -27,15 +27,15 @@ const Form = () => {
   console.log(dynamicData);
 
   const handleChange = (event) => {
-    // const oldState = deepClone(formState);
-    // setFormState(oldState);
-    setFormState({
-      ...formState,
-      [event.target.name]: {
-        ...formState[event.target.name],
-        value: event.target.value,
-      },
-    });
+    const oldState = deepClone(formState);
+    setFormState(oldState);
+    // setFormState({
+    //   ...formState,
+    //   [event.target.name]: {
+    //     ...formState[event.target.name],
+    //     value: event.target.value,
+    //   },
+    // });
   };
 
   const handleSubmit = (e) => {
@@ -73,13 +73,13 @@ const objToArray = (obj) => {
   return Object.keys(obj).map((key) => ({ name: key, ...obj[key] }));
 };
 
-// const transformObject = (obj) => {
-//   return Array.keys(obj).reduce((acc, cur) => {
-//     acc[cur] = { ...obj[cur], value: "" };
-//     return acc;
-//   }, {});
-// };
+const transformObject = (obj) => {
+  return Array.keys(obj).reduce((acc, cur) => {
+    acc[cur] = { ...obj[cur], value: "" };
+    return acc;
+  }, {});
+};
 
-// const deepClone = (obj) => {
-//   return JSON.parse(JSON.stringify(obj));
-// };
+const deepClone = (obj) => {
+  return JSON.parse(JSON.stringify(obj));
+};
