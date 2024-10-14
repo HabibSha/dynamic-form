@@ -27,15 +27,15 @@ const Form = () => {
   console.log(dynamicData);
 
   const handleChange = (event) => {
-    const oldState = deepClone(formState);
-    setFormState(oldState);
-    // setFormState({
-    //   ...formState,
-    //   [event.target.name]: {
-    //     ...formState[event.target.name],
-    //     value: event.target.value,
-    //   },
-    // });
+    // const oldState = deepClone(formState);
+    // setFormState(oldState);
+    setFormState({
+      ...formState,
+      [event.target.name]: {
+        ...formState[event.target.name],
+        value: event.target.value,
+      },
+    });
   };
 
   const handleSubmit = (e) => {
