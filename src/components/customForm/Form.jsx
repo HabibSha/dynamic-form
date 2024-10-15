@@ -18,7 +18,7 @@ const formFields = {
   },
 };
 
-// console.log(Object.keys(formFields));
+console.log(Object.keys(formFields));
 
 const Form = () => {
   const [formState, setFormState] = useState(formFields);
