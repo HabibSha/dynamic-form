@@ -47,15 +47,16 @@ const Form = () => {
       <form onSubmit={handleSubmit}>
         {dynamicData?.map((item, index) => {
           console.log(item);
+          const { label, type, name, value, placeholder } = item;
 
           return (
             <div key={index}>
-              <label>{item.label}</label>
+              <label>{label}</label>
               <input
-                type={item.type}
-                name={item.name}
-                value={item.value}
-                placeholder={item.placeholder}
+                type={type}
+                name={name}
+                value={value}
+                placeholder={placeholder}
                 onChange={handleChange}
               />
             </div>
